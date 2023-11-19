@@ -12,12 +12,12 @@ const initialCounterState = () => {
 };
 
 // Action Dispatch -> OBJECT - type, payload
-const incrementCounter = () =>{
+const incrementCounter = () => {
     return {
         type: INCREMENT,
     };
 };
-const decrementCounter = () =>{
+const decrementCounter = () => {
     return {
         type: DECREMENT,
     };
@@ -33,4 +33,19 @@ const addUser = () => {
 };
 
 // reducer for counter
-const 
+const counterReducer = (state = initialCounterState, action) => {
+    switch (action.type) {
+        case INCREMENT:
+            return {
+                ...state,
+                count: state.count + 1,
+            };
+        case DECREMENT:
+            return {
+                ...state,
+                count: state.count - 1,
+            }
+        default:
+            state;
+    }
+};
